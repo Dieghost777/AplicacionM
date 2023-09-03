@@ -1,5 +1,7 @@
 {
-  "name": "ionic-app-base",
-  "integrations": {},
+  "name": "RegistrAPP",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
