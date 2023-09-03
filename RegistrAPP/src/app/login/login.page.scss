@@ -1,0 +1,35 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Monaco, monospace;
+    ion-card {
+        * {
+          font-family: Monaco, monospace;
+        }
+      }
+    
+  }
+  
+  .login-card {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+    font-family: Monaco, monospace;
+
+  
+    ion-input {
+      --ion-input-border-color: #ccc;
+    }
+  
+    ion-button {
+      --ion-text-color: #fff;
+      border-radius: 25px; /* Redondea los bordes de los botones */
+      background-color: #53a1b4; /* Cambia el color de fondo de los botones */
+    }
+  }
+  
