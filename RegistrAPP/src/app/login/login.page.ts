@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; // Asegúrate de importar 'Router' desde '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -7,20 +8,18 @@ import { Component } from '@angular/core';
 })
 export class LoginPage {
   username: string = ''; // Inicializado aquí
-  password: string;
+  password: string = ''; // Inicializado aquí
 
-  constructor() {
-    this.password = ''; // Inicializado en el constructor
-  }
+  constructor(private router: Router) {} // Inyecta 'Router' en el constructor
 
   login() {
-    // Lógica para iniciar sesión
-    if (this.username === 'usuario' && this.password === 'contraseña') {
-      // Aquí podrías redirigir al usuario a la página de inicio de sesión exitosa
-      console.log('Inicio de sesión exitoso');
+    // Verificar si el usuario y la contraseña son "admin"
+    if (this.username === 'admin' && this.password === 'admin') {
+      // Verificar si el usuario es administrador (puedes agregar más lógica aquí)
+      // Si es administrador, redirige a la página de inicio
+      this.router.navigate(['/inicio']); // Redirige a la página 'inicio'
     } else {
-      // Mostrar un mensaje de error o realizar otra acción
-      console.error('Inicio de sesión fallido. Verifica tus credenciales.');
+      // Mostrar un mensaje de error o realizar alguna otra acción si la autenticación falla
     }
   }
 
