@@ -10,20 +10,32 @@
   <div class="login-container">
     <ion-card class="login-card">
       <img src="assets/img/ImgLogin/UserIcon.jpg" alt="Imagen de Usuario" class="user-image">
-
-      <ion-card-content>
+    
+      <form class="login-form">
         <ion-item>
           <ion-label position="floating">Nombre de Usuario</ion-label>
-          <ion-input type="text" [(ngModel)]="username"></ion-input>
+          <ion-input type="text" [(ngModel)]="username" name="username"></ion-input>
         </ion-item>
-
+    
         <ion-item>
           <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password" [(ngModel)]="password"></ion-input>
+          <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
         </ion-item>
-
-        <ion-button expand="full" color="primary" (click)="login()">Iniciar Sesión</ion-button>
-      </ion-card-content>
-    </ion-card>
+       
+        <ion-button expand="full" class="custom-login-button" (click)="login()">Iniciar Sesión</ion-button>
+      </form>
+    </ion-card> 
   </div>
 </ion-content>
+<ion-footer class="custom-footer">
+  <div class="custom-footer-content">
+    <div class="custom-footer-links">
+      <a (click)="contactUs()">Contáctanos</a>
+      <a (click)="aboutUs()">Sobre Nosotros</a>
+    </div>
+    <div class="custom-social-media">
+      <a (click)="openFacebookPage()">Facebook</a>
+      <a (click)="openTwitterPage()">Twitter</a>
+      <a (click)="openInstagramPage()">Instagram</a>
+    </div>
+  </div>

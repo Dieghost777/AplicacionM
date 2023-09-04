@@ -1,6 +1,28 @@
-/* Establece una clase personalizada para los elementos dentro de la tarjeta */
-.login-card ion-item, .login-card ion-button {
-    margin-bottom: 10px; /* Agrega espacio entre los elementos */
+.ion-header{
+    font-family: Monaco, monospace;
+
+}
+body {
+    background: linear-gradient(to bottom, #FFD700, #0000FF);
+    background-attachment: fixed; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    font-family: Monaco, monospace; 
+    margin: 0; 
+  }
+  
+  ion-content {
+    font-family: Monaco, monospace;
+    background-image: url('/assets/img/ImgLogin/BgContent.jpg');
+    background-repeat: no-repeat; 
+    background-size: auto; 
+    --ion-background-color: transparent;
+  }
+  
+  
+  .login-card ion-item,
+  .login-card ion-button {
+    margin-bottom: 10px; 
   }
   
   .login-container {
@@ -16,7 +38,7 @@
     width: 300px;
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background-color: #f7f7f7; 
     text-align: center;
     font-family: Monaco, monospace;
     position: relative;
@@ -24,6 +46,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    z-index: 1; 
   }
   
   .login-card::before {
@@ -41,27 +64,84 @@
     z-index: -1;
   }
   
-  ion-input {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    padding: 10px;
-    --ion-input-border-color: #ccc;
+  .login-card ion-item ion-input {
+    --ion-input-background: #fff;
+    --ion-border-radius: 15px; 
   }
   
-  ion-button {
+  .login-card ion-button {
     --ion-text-color: #fff;
     border-radius: 25px;
-    background-color: #53a1b4;
+    background-color: #dbe3e6;
+    margin-top: 10px; 
   }
   
-  ion-item {
+  .login-card ion-item {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   .user-image {
-    width: 100px; /* Tamaño de la imagen */
-    height: 100px; /* Tamaño de la imagen */
-    border-radius: 50%; /* Redondea los bordes de la imagen para hacerla circular */
-    margin-bottom: 20px; /* Añade espacio entre la imagen y los campos de entrada */
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%;
+    margin-bottom: 20px; 
+  }
+  ion-item ion-label {
+    color: rgb(12, 12, 12); 
+    font-family: Monaco, monospace;
+
+  }
+  ion-item {
+    background-color: #fdfdfd;
+    border-radius: 20px;
+
+  }
+
+.login-container .custom-login-button {
+  border-radius: 50px !important;
+  padding: 10px 20px !important;
+  background-color: #007bff !important;
+  color: white !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  text-decoration: none !important;
+  border: none !important;
+  font-family: Monaco, monospace;
+
+}
+
+.login-container .custom-login-button:hover {
+  background-color: #0056b3 !important;
+}
+.custom-footer {
+    background-color: white;
+    color: #333; 
+    padding: 20px 0;
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    z-index: 1; 
+  }
+  
+  .custom-footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .custom-footer-links a,
+  .custom-social-media a {
+    text-decoration: none;
+    color: rgb(5, 5, 5); 
+    margin: 10px; 
+    font-size: 18px; 
+  }
+  
+  .custom-footer-links a:hover,
+  .custom-social-media a:hover {
+    text-decoration: underline; 
   }
   
