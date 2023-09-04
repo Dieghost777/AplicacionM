@@ -1,35 +1,67 @@
-.login-container {
+/* Establece una clase personalizada para los elementos dentro de la tarjeta */
+.login-card ion-item, .login-card ion-button {
+    margin-bottom: 10px; /* Agrega espacio entre los elementos */
+  }
+  
+  .login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     font-family: Monaco, monospace;
-    ion-card {
-        * {
-          font-family: Monaco, monospace;
-        }
-      }
-    
   }
   
   .login-card {
     width: 300px;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     text-align: center;
     font-family: Monaco, monospace;
-
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
   
-    ion-input {
-      --ion-input-border-color: #ccc;
-    }
+  .login-card::before {
+    content: "";
+    background-image: url('/assets/img/ImgLogin/BgLogin.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    z-index: -1;
+  }
   
-    ion-button {
-      --ion-text-color: #fff;
-      border-radius: 25px; /* Redondea los bordes de los botones */
-      background-color: #53a1b4; /* Cambia el color de fondo de los botones */
-    }
+  ion-input {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 10px;
+    --ion-input-border-color: #ccc;
+  }
+  
+  ion-button {
+    --ion-text-color: #fff;
+    border-radius: 25px;
+    background-color: #53a1b4;
+  }
+  
+  ion-item {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-image {
+    width: 100px; /* Tamaño de la imagen */
+    height: 100px; /* Tamaño de la imagen */
+    border-radius: 50%; /* Redondea los bordes de la imagen para hacerla circular */
+    margin-bottom: 20px; /* Añade espacio entre la imagen y los campos de entrada */
   }
   
