@@ -1,0 +1,34 @@
+<ion-content>
+  <div id="header">
+    <div id="app-bar">
+      <ion-icon name="arrow-back" (click)="goBack()"></ion-icon>
+      <div id="logo">
+        <img src="\assets\img\ImgLogin\iconDuoc.jpg" alt="">
+      </div>
+      <div></div>
+    </div>
+
+    <h1>Registro</h1>
+    <p>Regístrate para acceder a la aplicación</p>
+  </div>
+
+  <div class="wrapper">
+    <ion-card class="form-wrapper">
+      <ion-card-content>
+        <ion-item>
+          <ion-icon name="person"></ion-icon>
+          <ion-input type="text" placeholder="Nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="mail"></ion-icon>
+          <ion-input type="text" placeholder="Correo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="lock-closed"></ion-icon>
+          <ion-input type="password" placeholder="Contraseña"></ion-input>
+        </ion-item>
+        <ion-button expand="block">Registrarse</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
