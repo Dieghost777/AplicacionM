@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true">
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Recuperar contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-card>
+<ion-input
+  type="email"
+  fill="solid"
+  label="Email"
+  labelPlacement="floating"
+  helperText="Introduzca un email valido"
+  errorText="Email invalida :c"
+  ngModel
+  email
+></ion-input>
+</ion-card>
+<ion-button> Enviar </ion-button> 
+</ion-content>
+
