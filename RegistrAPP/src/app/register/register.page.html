@@ -15,20 +15,23 @@
   <div class="wrapper">
     <ion-card class="form-wrapper">
       <ion-card-content>
-        <ion-item>
-          <ion-icon name="person"></ion-icon>
-          <ion-input type="text" placeholder="Nombre"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="mail"></ion-icon>
-          <ion-input type="text" placeholder="Correo"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="lock-closed"></ion-icon>
-          <ion-input type="password" placeholder="Contraseña"></ion-input>
-        </ion-item>
-        <ion-button expand="block">Registrarse</ion-button>
+        <form [formGroup]="formularioRegistro" (ngSubmit)="guardar()">
+          <ion-item>
+            <ion-icon name="person"></ion-icon>
+            <ion-input type="text" placeholder="Nombre" formControlName="nombre"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="mail"></ion-icon>
+            <ion-input type="text" placeholder="Correo" formControlName="correo"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="lock-closed"></ion-icon>
+            <ion-input type="password" placeholder="Contraseña" formControlName="contraseña"></ion-input>
+          </ion-item>
+          <ion-button expand="block" type="submit">Registrarse</ion-button>
+        </form>
       </ion-card-content>
     </ion-card>
   </div>
+  
 </ion-content>

@@ -11,5 +11,6 @@ export class DatosUsuarioPage implements OnInit {
 
   ngOnInit() {
   }
+  
 
 }
