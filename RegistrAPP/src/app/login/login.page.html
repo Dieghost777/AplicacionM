@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content class="logo-container">
   <div id="header">
     <div id="app-bar">
       <ion-icon name="arrow-back" (click)="goBack()"></ion-icon>
@@ -9,36 +9,33 @@
     </div>
 
     <h1 style="font-weight: bold; color: #0a123a;">Bienvenido</h1>
-    <p style="font-weight: bold; color: #0a123a;">Inicia Sesión o Registrate</p>
+    <p style="font-weight: bold; color: #0a123a;">Inicia Sesión o Regístrate</p>
   </div>
 
-  <ion-content>
-  
-    <div class="wrapper">
-      <ion-card class="form-wrapper">
-        <ion-card-content>
-          <form [formGroup]="formularioLogin" (submit)="ingresar()">
-            <ion-item>
-              <ion-icon name="mail"></ion-icon>
-              <ion-input
-                type="text"
-                placeholder="Nombre de Usuario"
-                formControlName="nombre"
-              ></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-icon name="lock-closed"></ion-icon>
-              <ion-input
-                type="password"
-                placeholder="Contraseña"
-                formControlName="contraseña"
-              ></ion-input>
-            </ion-item>
-            <ion-button color="warning" expand="block" style="font-weight: bold; color: rgb(6, 3, 54);">Iniciar Sesión</ion-button>
-            <a routerLink="/forpass" style="font-weight: normal; color: #f0e222;">¿Olvidaste tu contraseña?</a>
-          </form>
-        </ion-card-content>
-      </ion-card>
-    </div>
-  </ion-content>
-  
+  <div class="wrapper">
+    <ion-card class="form-wrapper">
+      <ion-card-content>
+        <form [formGroup]="formularioLogin" (submit)="ingresar()">
+          <ion-item>
+            <ion-icon name="mail"></ion-icon>
+            <ion-input
+              type="text"
+              placeholder="Nombre de Usuario"
+              formControlName="nombre"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="lock-closed"></ion-icon>
+            <ion-input
+              type="password"
+              placeholder="Contraseña"
+              formControlName="contraseña"
+            ></ion-input>
+          </ion-item>
+          <ion-button color="warning" expand="block" style="font-weight: bold; color: rgb(6, 3, 54);">Iniciar Sesión</ion-button>
+          <a routerLink="/forpass" style="font-weight: normal; color: #f0e222;">¿Olvidaste tu contraseña?</a>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
