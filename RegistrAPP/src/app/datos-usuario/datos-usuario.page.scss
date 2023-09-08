@@ -60,6 +60,14 @@ ion-content {
     ion-card-content{
       color: #000;
     }
+
+    img{
+      max-width: 35%;
+      max-height: 35%;
+      justify-content: center;
+      align-items: center;
+
+    }
   }
   
   .form-wrapper ion-item {
