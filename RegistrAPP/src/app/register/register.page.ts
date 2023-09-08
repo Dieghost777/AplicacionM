@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,8 @@ export class RegisterPage {
     private location: Location,
     private alertController: AlertController,
     private toastController: ToastController,
-    private fb: FormBuilder 
+    private fb: FormBuilder ,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -37,6 +39,10 @@ export class RegisterPage {
 
       await alert.present();
       return;
+    }else{
+
+      this.router.navigate(['/login']);
+
     }
 
     var usuario = {
@@ -51,6 +57,7 @@ export class RegisterPage {
       message: 'Usuario creado correctamente',
       duration: 2000, 
       position: 'top', 
+
     });
 
     await toast.present();

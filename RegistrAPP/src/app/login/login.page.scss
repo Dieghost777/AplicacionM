@@ -4,7 +4,7 @@ ion-content {
 
 #header {
   background-color: #ffffff;
-  color: #000; /* Cambia el color del texto a negro */
+  color: #000;
   text-align: center;
   padding: 20px;
   border-radius: 0 0 20px 20px;
@@ -16,8 +16,7 @@ ion-content {
   align-items: center;
 }
 
-.logo-container { /* Agregamos un punto antes de 'logo-container' para indicar que es una clase CSS */
-  display: flex;
+.logo-container {
   justify-content: center;
   align-items: center;
   height: 100vh;

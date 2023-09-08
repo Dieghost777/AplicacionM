@@ -5,8 +5,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ForpassPageRoutingModule } from './forpass-routing.module';
 
-import { ForpassPage } from './forpass.page'; // Asegúrate de que esté correcto
-
+import { ForpassPage } from './forpass.page'; 
 @NgModule({
   imports: [
     CommonModule,
@@ -14,6 +13,6 @@ import { ForpassPage } from './forpass.page'; // Asegúrate de que esté correct
     IonicModule,
     ForpassPageRoutingModule
   ],
-  declarations: [ForpassPage], // Utiliza ForpassPage como componente
+  declarations: [ForpassPage], 
 })
 export class ForpassPageModule {}

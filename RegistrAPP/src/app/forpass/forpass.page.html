@@ -19,13 +19,12 @@
         fill="solid"
         label="Email"
         labelPlacement="floating"
-        helperText="Introduzca un email valido"
-        errorText="Email invalida :c"
-        ngModel
-        email
+        helperText="Introduzca un email válido"
+        errorText="Email inválida :c"
+        [(ngModel)]="correo"
       ></ion-input>
     </ion-card>
-    <ion-button color="warning" expand="block" style="font-weight: bold; color: rgb(6, 3, 54);">
+    <ion-button color="warning" expand="block" style="font-weight: bold; color: rgb(6, 3, 54);" (click)="verificarCorreo()">
       Enviar
     </ion-button>
   </div>
