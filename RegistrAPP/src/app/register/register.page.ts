@@ -16,8 +16,7 @@ export class RegisterPage {
     private location: Location,
     private alertController: AlertController,
     private toastController: ToastController,
-    private fb: FormBuilder // Agrega el FormBuilder aquí
-
+    private fb: FormBuilder 
   ) {}
 
   ngOnInit(): void {
@@ -46,19 +45,16 @@ export class RegisterPage {
       contraseña: f.contraseña,
     };
 
-    // Guardar en localStorage
     localStorage.setItem('usuario', JSON.stringify(usuario));
 
-    // Mostrar mensaje emergente de éxito
     const toast = await this.toastController.create({
       message: 'Usuario creado correctamente',
-      duration: 2000, // Duración del mensaje emergente en milisegundos
-      position: 'top', // Puedes ajustar la posición según tus preferencias
+      duration: 2000, 
+      position: 'top', 
     });
 
     await toast.present();
 
-    // Limpiar los campos del formulario
     this.formularioRegistro.reset();
   }
 
