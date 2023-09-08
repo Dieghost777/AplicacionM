@@ -1,7 +1,8 @@
 <ion-content class="logo-container">
+  
   <div id="header">
     <div id="app-bar">
-      <ion-icon name="arrow-back" (click)="goBack()"></ion-icon>
+      <ion-icon name="arrow-back" (click)="goBack()" class="back-icon"></ion-icon>
       <div id="logo">
         <img src="\assets\img\ImgLogin\logo_duoc.png" alt="logo_duoc">
       </div>
@@ -12,62 +13,25 @@
     <p style="font-weight: bold; color: #0a123a;">Inicia Sesión o Regístrate</p>
   </div>
 
-<<<<<<< HEAD
-  <ion-content>
-  
-    <div class="wrapper">
-      <ion-card class="form-wrapper">
-        <ion-card-content>
-          <form [formGroup]="formularioLogin" (submit)="ingresar()">
-            <ion-item>
-              <ion-icon name="mail"></ion-icon>
-              <ion-input
-                type="text"
-                placeholder="Nombre de Usuario"
-                formControlName="nombre"
-              ></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-icon name="lock-closed"></ion-icon>
-              <ion-input
-                type="password"
-                placeholder="Contraseña"
-                formControlName="contraseña"
-              ></ion-input>
-            </ion-item>
-            <ion-button expand="block" type="submit">Iniciar Sesión</ion-button>
-          </form>
-        </ion-card-content>
-      </ion-card>
-    </div>
-  </ion-content>
-  
-=======
-
-
   <div class="wrapper">
     <ion-card class="form-wrapper">
-      <ion-card-content>      
-        <ion-item>
+      <ion-card-content>
+        <form [formGroup]="formularioLogin" (submit)="ingresar()">
+          <ion-item>
             <ion-icon name="mail"></ion-icon>
-            <ion-input type="text" placeholder="Correo"></ion-input>
-        </ion-item>
-        <ion-item>         
-                <ion-icon name="lock-closed"> </ion-icon>
-                  <ion-input type="password" placeholder="Contraseña"></ion-input>               
-        </ion-item>
-        <ion-button color="warning" expand="block">Iniciar Sesión</ion-button>
-        <div> 
-          <a [routerLink]="['/forpass']"> "¿Ha olvidado su contraseña?" </a>
+            <ion-input type="text" placeholder="Correo" formControlName="nombre"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="lock-closed"></ion-icon>
+            <ion-input type="password" placeholder="Contraseña" formControlName="contraseña"></ion-input>
+          </ion-item>
+          <ion-button color="warning" expand="block" type="submit">Iniciar Sesión</ion-button>
+        </form>
+        <div>
+          <a [routerLink]="['/forpass']">¿Ha olvidado su contraseña?</a>
         </div>
-
-
       </ion-card-content>
-
-
     </ion-card>
-
-
   </div>
 </ion-content>
->>>>>>> 70d8ed01185790adbc5036aab7b681930c4e8c12
+
