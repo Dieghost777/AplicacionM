@@ -1,6 +1,11 @@
-<ion-content>
+<ion-header >
+
+</ion-header>
+
+<ion-content [fullscreen]="true" class="logo-container">
   <div id="header">
     <div id="app-bar">
+      <ion-icon name="arrow-back" (click)="goBack()" class="back-icon"></ion-icon>
       <div id="logo">
         <img src="\assets\img\ImgLogin\logo_duoc.png" alt="logo_duoc">
       </div>
@@ -11,23 +16,21 @@
     <h6 style="font-weight: bold; color: #0a123a;">Le enviaremos un correo para que recupere su contraseña</h6>
   </div>
 
-<div class="wrapper">
-<ion-card class="form-wrapper">
-<ion-input
-  type="email"
-  fill="solid"
-  label="Email"
-  labelPlacement="floating"
-  helperText="Introduzca un email valido"
-  errorText="Email invalida :c"
-  ngModel
-  email
-></ion-input>
-
-</ion-card>
-<ion-button color="warning" expand="block" style="font-weight: bold; color: rgb(6, 3, 54);">
-Enviar
-</ion-button>
+  <div class="wrapper">
+    <ion-card class="form-wrapper">
+      <ion-input
+        type="email"
+        fill="solid"
+        label="Email"
+        labelPlacement="floating"
+        helperText="Introduzca un email valido"
+        errorText="Email invalida :c"
+        ngModel
+        email
+      ></ion-input>
+    </ion-card>
+    <ion-button color="warning" expand="block" style="font-weight: bold; color: rgb(6, 3, 54);">
+      Enviar
+    </ion-button>
   </div>
-
 </ion-content>

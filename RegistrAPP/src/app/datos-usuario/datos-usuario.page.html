@@ -4,10 +4,31 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">datosUsuario</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="logo-container">
+  <div id="header">
+    <div id="app-bar">
+      <ion-icon name="arrow-back" (click)="goBack()" class="back-icon"></ion-icon>
+      <div id="logo">
+        <img src="\assets\img\ImgLogin\logo_duoc.png" alt="logo_duoc">
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      Datos del Usuario
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label>Nombre:</ion-label>
+      <ion-text>{{ usuario.nombre }}</ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-label>Correo:</ion-label>
+      <ion-text>{{ usuario.correo }}</ion-text>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
