@@ -4,7 +4,7 @@ ion-content {
 }
 
 #header {
-  background-color: #3498db; 
+  background-color: #ffffff; 
   color: white; 
   text-align: center;
   padding: 20px;
@@ -17,23 +17,17 @@ ion-content {
   align-items: center;
 }
 
-#logo {
-  width: 30px;
-  height: 30px;
-  background-color: white;
+logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  align-self: center;
-  img {
-    width: 70%;
-  }
+  height: 100vh;
+  background-color: #f0f0f0; 
 }
 
-h1 {
-  font-size: 24px;
-  margin-top: 10px;
+img {
+  max-width: 70%; 
+  max-height: 70%; 
 }
 
 p {
