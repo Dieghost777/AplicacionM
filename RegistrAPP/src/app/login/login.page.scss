@@ -1,9 +1,9 @@
 ion-content {
-  --ion-background-color: #f4f4f4; 
+  ion-background-color: #000520; 
 }
 
 #header {
-  background-color: #3498db; 
+  background-color: #ffffff; 
   color: white; 
   text-align: center;
   padding: 20px;
@@ -16,18 +16,17 @@ ion-content {
   align-items: center;
 }
 
-#logo {
-  width: 30px;
-  height: 30px;
-  background-color: white;
+logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  align-self: center;
-  img {
-    width: 70%;
-  }
+  height: 100vh;
+  background-color: #f0f0f0; 
+}
+
+img {
+  max-width: 70%; 
+  max-height: 70%; 
 }
 
 h1 {
