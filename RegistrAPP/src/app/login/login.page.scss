@@ -1,5 +1,5 @@
 ion-content {
-  ion-background-color: #000520; 
+  --ion-background-color: #000520; 
 }
 
 #header {
@@ -25,8 +25,8 @@ logo-container {
 }
 
 img {
-  max-width: 70%; 
-  max-height: 70%; 
+  max-width: 55%; 
+  max-height: 55%; 
 }
 
 h1 {
