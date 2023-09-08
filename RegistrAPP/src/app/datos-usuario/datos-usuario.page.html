@@ -9,20 +9,19 @@
     </div>
   </div>
 
-  <ion-card>
+  <div class="wrapper">
+    <ion-card class="form-wrapper">
     <ion-card-header>
       Datos del Usuario
     </ion-card-header>
     <ion-card-content>
-      <ion-label>Nombre:</ion-label>
+      <ion-label>Nombre: </ion-label>
       <ion-text>{{ usuario.nombre }}</ion-text>
     </ion-card-content>
-  </ion-card>
-
-  <ion-card>
     <ion-card-content>
-      <ion-label>Correo:</ion-label>
+      <ion-label>Correo: </ion-label>
       <ion-text>{{ usuario.correo }}</ion-text>
     </ion-card-content>
   </ion-card>
+  </div>
 </ion-content>
