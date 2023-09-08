@@ -1,17 +1,18 @@
-<ion-content>
+<ion-content class="logo-container">
   <div id="header">
     <div id="app-bar">
       <ion-icon name="arrow-back" (click)="goBack()"></ion-icon>
       <div id="logo">
-        <img src="\assets\img\ImgLogin\iconDuoc.jpg" alt="">
+        <img src="\assets\img\ImgLogin\logo_duoc.png" alt="logo_duoc">
       </div>
       <div></div>
     </div>
 
-    <h1>Bienvenido</h1>
-    <p>Inicia Sesión o Regístrate</p>
+    <h1 style="font-weight: bold; color: #0a123a;">Bienvenido</h1>
+    <p style="font-weight: bold; color: #0a123a;">Inicia Sesión o Regístrate</p>
   </div>
 
+<<<<<<< HEAD
   <ion-content>
   
     <div class="wrapper">
@@ -41,3 +42,32 @@
     </div>
   </ion-content>
   
+=======
+
+
+  <div class="wrapper">
+    <ion-card class="form-wrapper">
+      <ion-card-content>      
+        <ion-item>
+            <ion-icon name="mail"></ion-icon>
+            <ion-input type="text" placeholder="Correo"></ion-input>
+        </ion-item>
+        <ion-item>         
+                <ion-icon name="lock-closed"> </ion-icon>
+                  <ion-input type="password" placeholder="Contraseña"></ion-input>               
+        </ion-item>
+        <ion-button color="warning" expand="block">Iniciar Sesión</ion-button>
+        <div> 
+          <a [routerLink]="['/forpass']"> "¿Ha olvidado su contraseña?" </a>
+        </div>
+
+
+      </ion-card-content>
+
+
+    </ion-card>
+
+
+  </div>
+</ion-content>
+>>>>>>> 70d8ed01185790adbc5036aab7b681930c4e8c12
