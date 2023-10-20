@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { AlertController } from '@ionic/angular';
-import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-datos-usuario',
@@ -10,9 +9,8 @@ import { ApiService } from '../api.service';
 })
 export class DatosUsuarioPage {
   usuario: any = {}; 
-  menu: any;
 
-  constructor(private location: Location, private alertController: AlertController, private apiService: ApiService) {
+  constructor(private location: Location, private alertController: AlertController) {
     const usuarioString = localStorage.getItem('usuario');
 
     if (usuarioString) {
@@ -22,12 +20,5 @@ export class DatosUsuarioPage {
 
   goBack() {
     this.location.back();
-  }
-
-  verMenu() {
-    this.apiService.obtenerMenu().subscribe((data) => {
-      this.menu = data;
-      console.log(this.menu);
-    });
   }
 }
