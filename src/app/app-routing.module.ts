@@ -33,6 +33,11 @@ const routes: Routes = [
     path: 'generar-qr',
     loadChildren: () => import('./generar-qr/generar-qr.module').then( m => m.GenerarQrPageModule)
   },
+  {
+    path: 'page404',
+    loadChildren: () => import('./page404/page404.module').then( m => m.Page404PageModule)
+  },
+  { path: '**', redirectTo: '/page404', pathMatch: 'full' },
 ];
 
 @NgModule({
