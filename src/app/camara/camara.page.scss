@@ -1,0 +1,39 @@
+ion-content {
+    --ion-background-color: #eeeeee;
+  }
+
+  #header {
+    background-color: #ffffff;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  #app-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+
+  img {
+    max-width: 35%;
+    max-height: 35%;
+  }
+
+    img{
+      justify-content: center;
+      align-items: center;
+
+    }
+
+
+

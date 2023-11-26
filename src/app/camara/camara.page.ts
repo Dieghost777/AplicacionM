@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BrowserMultiFormatReader, Result } from '@zxing/library';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-camara',
@@ -10,7 +11,7 @@ export class CamaraPage implements OnInit, OnDestroy {
   decodedText: string = '';
   codeReader: BrowserMultiFormatReader = new BrowserMultiFormatReader(); 
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
   }
@@ -28,5 +29,9 @@ export class CamaraPage implements OnInit, OnDestroy {
       .catch((err) => {
         console.error(err);
       });
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

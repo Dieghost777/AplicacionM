@@ -1,11 +1,12 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Cámara
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 <ion-content>
+  <div id="header">
+    <div id="app-bar">
+      <ion-icon name="arrow-back" (click)="goBack()" color="warning" size="large"></ion-icon>
+      <div id="logo">
+        <img src="\assets\img\ImgLogin\logo_duoc.png" alt="logo_duoc">
+      </div>
+    </div>
+  </div>
   <div id="container">
     <div>
       <video id="video" width="100%" autoplay></video>
