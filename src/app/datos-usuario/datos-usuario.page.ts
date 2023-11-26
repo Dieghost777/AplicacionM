@@ -4,6 +4,7 @@ import { AlertController } from '@ionic/angular';
 import { QrCodeService } from '../qr-code.service';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth.service'; // Importa el AuthService si aún no está importado
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-datos-usuario',
@@ -21,7 +22,8 @@ export class DatosUsuarioPage {
     private alertController: AlertController,
     private qrCodeService: QrCodeService,
     private apiService: ApiService,
-    private authService: AuthService // Agrega el servicio de autenticación
+    private authService: AuthService, // Agrega el servicio de autenticación
+    private router: Router
   ) {
     this.loadUserData();
   }
@@ -44,6 +46,11 @@ export class DatosUsuarioPage {
     this.qrCodeService.generateRandomQRCode().then((source: string) => {
       this.qrCodeSource = source;
     });
+  }
+
+  irCamara() {
+    console.log('Se llamo ir camara')
+    this.router.navigate(['/camara']);
   }
 
   verMenu() {
