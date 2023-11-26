@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { AlertController } from '@ionic/angular';
-import { QrCodeService } from '../qr-code.service';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -10,16 +9,10 @@ import { ApiService } from '../api.service';
   styleUrls: ['./datos-usuario.page.scss'],
 })
 export class DatosUsuarioPage {
-  usuario: any = {};
-  qrCodeSource: string = ''; // Variable para la fuente de la imagen del código QR
+  usuario: any = {}; 
   menu: any;
 
-  constructor(
-    private location: Location,
-    private alertController: AlertController,
-    private qrCodeService: QrCodeService,
-    private apiService: ApiService
-  ) {
+  constructor(private location: Location, private alertController: AlertController, private apiService: ApiService) {
     const usuarioString = localStorage.getItem('usuario');
 
     if (usuarioString) {
@@ -31,12 +24,6 @@ export class DatosUsuarioPage {
     this.location.back();
   }
 
-  generateAndDisplayQR() {
-    this.qrCodeService.generateRandomQRCode().then((source: string) => {
-      this.qrCodeSource = source;
-    });
-
-  }
   verMenu() {
     this.apiService.obtenerMenu().subscribe((data) => {
       this.menu = data;
@@ -44,4 +31,3 @@ export class DatosUsuarioPage {
     });
   }
 }
-
