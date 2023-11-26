@@ -16,11 +16,11 @@
       </ion-card-header>
       <ion-card-content>
         <ion-label>Nombre: </ion-label>
-        <ion-text>{{ usuario.nombre }}</ion-text>
+        <ion-text>{{ alumno?.nombre }}</ion-text>
       </ion-card-content>
       <ion-card-content>
         <ion-label>Correo: </ion-label>
-        <ion-text>{{ usuario.correo }}</ion-text>
+        <ion-text>{{ alumno?.correo }}</ion-text>
         <ion-button color="warning" (click)="generateAndDisplayQR()">Generar QR</ion-button>
         <img [src]="qrCodeSource" *ngIf="qrCodeSource" alt="Código QR">
       </ion-card-content>

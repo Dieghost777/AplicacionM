@@ -8,13 +8,13 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
     path: 'datos-usuario',
     loadChildren: () => import('./datos-usuario/datos-usuario.module').then( m => m.DatosUsuarioPageModule),
+    canActivate: [AuthGuard], // Aplica el guardia a esta ruta
+  },
+  {
+    path: 'inicio-profesor',
+    loadChildren: () => import('./inicio-profesor/inicio-profesor.module').then( m => m.InicioProfesorPageModule),
     canActivate: [AuthGuard], // Aplica el guardia a esta ruta
   },
   {
@@ -37,8 +37,10 @@ const routes: Routes = [
     path: 'page404',
     loadChildren: () => import('./page404/page404.module').then( m => m.Page404PageModule)
   },
-  { path: '**', redirectTo: '/page404', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/page404' },
 ];
+
 
 @NgModule({
   imports: [

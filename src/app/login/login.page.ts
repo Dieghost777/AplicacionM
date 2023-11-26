@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { AlertController, ToastController } from '@ionic/angular';
-import { Location } from '@angular/common';
-import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,9 +13,7 @@ export class LoginPage {
   formularioLogin: FormGroup;
 
   constructor(
-    private location: Location,
     private alertController: AlertController,
-    private toastController: ToastController,
     private fb: FormBuilder,
     private router: Router,
     private authService: AuthService
@@ -24,48 +21,53 @@ export class LoginPage {
     this.formularioLogin = this.fb.group({
       nombre: new FormControl('', Validators.required),
       contrasena: new FormControl('', Validators.required),
+      tipoUsuario: new FormControl('', Validators.required) // Agrega el FormControl para el tipo de usuario
     });
   }
 
   async ingresar() {
     const f = this.formularioLogin.value;
-    const usuarioString = localStorage.getItem('usuario');
-  
-    if (usuarioString) {
-      const usuario = JSON.parse(usuarioString);
-  
-      console.log('Usuario en el localStorage:', usuario); // Mensaje de depuración
-  
-      if (usuario.nombre === f.nombre && usuario.contrasena === f.contrasena) {
-        console.log('Credenciales coinciden.'); // Mensaje de depuración
-  
-        if (this.authService.login(f.nombre, f.contrasena)) {
-          console.log('Inicio de sesión exitoso.'); // Mensaje de depuración
-          this.router.navigate(['/datos-usuario']);
-        } else {
-          console.log('AuthService.login() devolvió falso.'); // Mensaje de depuración
+
+    try {
+      if (await this.authService.login(f.nombre, f.contrasena)) {
+        const usuario = await this.authService.getUserByName(f.nombre);
+
+        if (usuario) {
+          if (f.tipoUsuario === 'alumno') {
+            this.router.navigate(['/datos-usuario']);
+          } else if (f.tipoUsuario === 'profesor') {
+            const profesor = await this.authService.getProfesorDetails(f.nombre);
+
+            if (profesor) {
+              this.router.navigate(['/inicio-profesor']);
+            } else {
+              console.log('Detalles del profesor no encontrados.');
+            }
+          } else {
+            console.log('Tipo de usuario desconocido.');
+          }
         }
       } else {
         const alert = await this.alertController.create({
           message: 'Datos incorrectos y/o Usuario no encontrado.',
           buttons: ['OK'],
         });
-  
+
         await alert.present();
-        console.log('Credenciales incorrectas.'); // Mensaje de depuración
+        console.log('Credenciales incorrectas.');
       }
-    } else {
+    } catch (error) {
       const alert = await this.alertController.create({
-        message: 'Usuario no encontrado.',
+        message: 'Error al iniciar sesión.',
         buttons: ['OK'],
       });
-  
+
       await alert.present();
-      console.log('Usuario no encontrado en el localStorage.'); // Mensaje de depuración
+      console.error('Error al iniciar sesión:', error);
     }
   }
-
+  
   goBack() {
-    this.location.back();
+    this.router.navigate(['/']); 
   }
 }

@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicio del Profesor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="profesor">
+    <ion-card-header>
+      <ion-card-title>Nombre: {{ profesor.nombre }}</ion-card-title>
+      <ion-card-subtitle>Email: {{ profesor.correo }}</ion-card-subtitle>
+      <ion-card-subtitle>Tipo: {{ profesor.tipoUsuario }}</ion-card-subtitle>
+    </ion-card-header>
+    <!-- Otros detalles del profesor -->
+  </ion-card>
+  <ion-card *ngIf="!profesor">
+    <ion-card-header>
+      <ion-card-title>No se encontraron detalles del profesor</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

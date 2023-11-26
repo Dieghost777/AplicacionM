@@ -1,0 +1,17 @@
+ion-header {
+    ion-toolbar {
+      background-color: #3366ff;
+      color: #fff;
+    }
+  }
+  
+  ion-content {
+    ion-card {
+      background-color: #dba1a1;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  

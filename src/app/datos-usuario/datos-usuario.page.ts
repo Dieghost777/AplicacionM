@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { AlertController } from '@ionic/angular';
 import { QrCodeService } from '../qr-code.service';
 import { ApiService } from '../api.service';
+import { AuthService } from '../auth.service'; // Importa el AuthService si aún no está importado
 
 @Component({
   selector: 'app-datos-usuario',
@@ -13,17 +14,25 @@ export class DatosUsuarioPage {
   usuario: any = {};
   qrCodeSource: string = ''; // Variable para la fuente de la imagen del código QR
   menu: any;
+  alumno: any; // Agrega la variable para almacenar los datos del alumno
 
   constructor(
     private location: Location,
     private alertController: AlertController,
     private qrCodeService: QrCodeService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private authService: AuthService // Agrega el servicio de autenticación
   ) {
-    const usuarioString = localStorage.getItem('usuario');
+    this.loadUserData();
+  }
 
-    if (usuarioString) {
-      this.usuario = JSON.parse(usuarioString);
+  async loadUserData() {
+    const username = this.authService.getLoggedUserName();
+    console.log('Username:', username);
+
+    if (username) {
+      this.alumno = await this.authService.getAlumnoDetails(username);
+      console.log('Alumno:', this.alumno);
     }
   }
 
@@ -35,13 +44,12 @@ export class DatosUsuarioPage {
     this.qrCodeService.generateRandomQRCode().then((source: string) => {
       this.qrCodeSource = source;
     });
-
   }
+
   verMenu() {
     this.apiService.obtenerMenu().subscribe((data) => {
       this.menu = data;
-      console.log(this.menu);
+      console.log('Menu:', this.menu);
     });
   }
 }
-
